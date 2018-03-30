@@ -1,0 +1,146 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "loan stars",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "CheckAppStatusIntent",
+          "slots": [
+            {
+              "name": "appType",
+              "type": "appType",
+              "samples": [
+                "{appType}"
+              ]
+            },
+            {
+              "name": "lookupAmount",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "what the status of my loan is",
+            "what the status of my {appType} loan is",
+            "what the status of my application is",
+            "what the status of my {appType} application is",
+            "what is the status of my {appType} loan",
+            "what is the status of my application",
+            "check the status of my {appType} loan",
+            "check the status of my loan",
+            "check the status of my application",
+            "check the status of my {appType} application",
+            "check my loan status",
+            "check my {appType} loan status",
+            "check my application status",
+            "check my {appType} application status",
+            "what is the status of my {appType} application"
+          ]
+        },
+        {
+          "name": "SayHiIntent",
+          "samples": [
+            "no way",
+            "yes",
+            "say hi to the class"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "auto loan"
+              }
+            },
+            {
+              "name": {
+                "value": "auto"
+              }
+            },
+            {
+              "name": {
+                "value": "mortgage"
+              }
+            },
+            {
+              "name": {
+                "value": "loan"
+              }
+            }
+          ],
+          "name": "appType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CheckAppStatusIntent",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "appType",
+              "type": "appType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.695673189322.644214193190"
+              }
+            },
+            {
+              "name": "lookupAmount",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.695673189322.644214193191"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.464967988430.1251471217303",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What type of application. For example, auto loan, loan, or mortgage."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.695673189322.644214193190",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What kind of loan?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.695673189322.644214193191",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What amount do you want to lookup?"
+          }
+        ]
+      }
+    ]
+  }
+}
